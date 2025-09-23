@@ -223,6 +223,15 @@ app.post("/", async (req, res) => {
     if (mensaje.type === "interactive") {
       const respuesta = mensaje.interactive.button_reply.id;
       const texto = mensaje.interactive.button_reply.title;
+    }  else if (mensaje.type === "button") {
+        respuesta = mensaje.button.payload;
+        texto = mensaje.button.text;
+    } else if (mensaje.type === "text") {
+        respuesta = mensaje.text.body;
+        texto = mensaje.text.body;
+    }  
+
+    if (respuesta) {
       console.log(`👉 Respuesta de ${numero}: ${respuesta}`);
 
       // Revisar si ya existe encuesta en curso
