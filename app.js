@@ -184,6 +184,7 @@ async function enviarPregunta(numero, numPregunta) {
       type: "text",
       text: { body: pregunta.texto }
     };
+  }
 
   try {
     await axios.post(
