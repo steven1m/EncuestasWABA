@@ -66,7 +66,7 @@ const PREGUNTAS = {
   },
   7: {
     texto: "¿Tiene algún comentario adicional sobre el uso de WhatsApp o la atención del vendedor asignado? (Respuesta abierta)",
-    opciones: [{ id: "fin", title: "Cerrar" }],
+    //opciones: [{ id: "fin", title: "Cerrar" }],
   },
 };
 
@@ -176,6 +176,15 @@ async function enviarPregunta(numero, numPregunta) {
     },
   };
 
+  if (numPregunta === 7) {
+    // 📌 Última pregunta como texto libre
+    const payload = {
+      messaging_product: "whatsapp",
+      to: numero,
+      type: "text",
+      text: { body: pregunta.texto }
+    };
+
   try {
     await axios.post(
       `https://graph.facebook.com/v20.0/${phoneNumberId}/messages`,
@@ -216,6 +225,8 @@ app.post("/", async (req, res) => {
   const body = req.body;
   console.log("\n📩 Webhook recibido:\n", JSON.stringify(body, null, 2));
 
+  console.log("🔎 Tipo de mensaje recibido:", mensaje.type, JSON.stringify(mensaje, null, 2));
+
   try {
     const mensaje = body.entry[0].changes[0].value.messages[0];
     const numero = mensaje.from;
@@ -223,7 +234,7 @@ app.post("/", async (req, res) => {
     if (mensaje.type === "interactive") {
       const respuesta = mensaje.interactive.button_reply.id;
       const texto = mensaje.interactive.button_reply.title;
-    }  else if (mensaje.type === "button") {
+    }  else if (mensaje.type === "button" || ) {
         respuesta = mensaje.button.payload;
         texto = mensaje.button.text;
     } else if (mensaje.type === "text") {
