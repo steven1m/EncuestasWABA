@@ -1,0 +1,19 @@
+{
+  "name": "whatsapp-survey-bot",
+  "version": "1.0.0",
+  "description": "Bot de encuestas por WhatsApp usando Cloud API, Node.js y PostgreSQL (Render)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "Steven Murillo",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.0",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
