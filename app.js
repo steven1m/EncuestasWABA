@@ -234,7 +234,7 @@ app.post("/", async (req, res) => {
     if (mensaje.type === "interactive") {
       const respuesta = mensaje.interactive.button_reply.id;
       const texto = mensaje.interactive.button_reply.title;
-    }  else if (mensaje.type === "button" || ) {
+    }  else if (mensaje.type === "button") {
         respuesta = mensaje.button.payload;
         texto = mensaje.button.text;
     } else if (mensaje.type === "text") {
