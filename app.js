@@ -160,6 +160,29 @@ async function enviarPregunta(numero, numPregunta) {
   const pregunta = PREGUNTAS[numPregunta];
   if (!pregunta) return;
 
+  // Si la pregunta no tiene opciones → mandar texto normal
+  if (!pregunta.opciones || pregunta.opciones.length === 0) {
+    const payload = {
+      messaging_product: "whatsapp",
+      to: numero,
+      type: "text",
+      text: { body: pregunta.texto }
+    };
+
+    await axios.post(
+      `https://graph.facebook.com/v20.0/${phoneNumberId}/messages`,
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    console.log(`✅ Pregunta ${numPregunta} (texto libre) enviada a ${numero}`);
+    return;
+  }
+
   const buttons = pregunta.opciones.map((op) => ({
     type: "reply",
     reply: { id: op.id, title: op.title },
