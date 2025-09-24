@@ -24,9 +24,9 @@ const PREGUNTAS = {
   2: {
     texto: "¿Con qué frecuencia le gustaría recibir mensajes de nuestra empresa por WhatsApp?",
     opciones: [
-      { id: "tiempo", title: "1 vez por semana" },
-      { id: "producto", title: "2 vez por semana" },
-      { id: "atencion", title: "Solo info importante" },
+      { id: "unavez", title: "1 vez por semana" },
+      { id: "dosveces", title: "2 vez por semana" },
+      { id: "soloimportante", title: "Solo info importante" },
     ],
   },
   3: {
@@ -40,7 +40,7 @@ const PREGUNTAS = {
   4: {
     texto: "Satisfacción con el Vendedor Asignado: ¿Qué tan satisfecho está con la atención recibida por el vendedor asignado?",
     opciones: [
-      { id: "Muysatisfecho", title: "Muy satisfecho" },
+      //{ id: "Muysatisfecho", title: "Muy satisfecho" },
       { id: "Satisfecho", title: "Satisfecho" },
       { id: "Neutral", title: "Neutral" },
       { id: "Insatisfecho", title: "Insatisfecho" },
@@ -49,7 +49,7 @@ const PREGUNTAS = {
   5: {
     texto: "¿Cómo calificaría la disponibilidad y tiempo de respuesta del vendedor asignado?",
     opciones: [
-      { id: "Excelente", title: "Excelente" },
+      //{ id: "Excelente", title: "Excelente" },
       { id: "Bueno", title: "Bueno" },
       { id: "Regular", title: "Regular" },
       { id: "Malo", title: "Malo" },
@@ -58,9 +58,9 @@ const PREGUNTAS = {
   6: {
     texto: "¿Qué tan claro le ha resultado el vendedor al explicar los productos o servicios?",
     opciones: [
-      { id: "Muyclaro", title: "Muy claro" },
+      //{ id: "Muyclaro", title: "Muy claro" },
       { id: "Claro", title: "Claro" },
-      { id: "Pococlaro", title: "Poco claro" },
+      { id: "Pococlaro", title: "Promedio" },
       { id: "Nadaclaro", title: "Nada claro" },
     ],
   },
