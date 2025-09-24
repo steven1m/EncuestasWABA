@@ -226,11 +226,11 @@ app.post("/", async (req, res) => {
   const body = req.body;
   console.log("\n📩 Webhook recibido:\n", JSON.stringify(body, null, 2));
 
-  console.log("🔎 Tipo de mensaje recibido:", mensaje.type, JSON.stringify(mensaje, null, 2));
-
   try {
     const mensaje = body.entry[0].changes[0].value.messages[0];
     const numero = mensaje.from;
+
+    console.log("🔎 Tipo de mensaje recibido:", mensaje.type, JSON.stringify(mensaje, null, 2));
 
     if (mensaje.type === "interactive") {
       const respuesta = mensaje.interactive.button_reply.id;
