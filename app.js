@@ -252,12 +252,14 @@ app.post("/", async (req, res) => {
   try {
     const mensaje = body.entry[0].changes[0].value.messages[0];
     const numero = mensaje.from;
+    const respuesta = ""
+    const texto = ""
 
     console.log("🔎 Tipo de mensaje recibido:", mensaje.type, JSON.stringify(mensaje, null, 2));
 
     if (mensaje.type === "interactive") {
-      const respuesta = mensaje.interactive.button_reply.id;
-      const texto = mensaje.interactive.button_reply.title;
+      respuesta = mensaje.interactive.button_reply.id;
+      texto = mensaje.interactive.button_reply.title;
     }  else if (mensaje.type === "button") {
         respuesta = mensaje.button.payload;
         texto = mensaje.button.text;
