@@ -24,17 +24,17 @@ const PREGUNTAS = {
   2: {
     texto: "¿Con qué frecuencia le gustaría recibir mensajes de nuestra empresa por WhatsApp?",
     opciones: [
-      { id: "unavez", title: "1 vez por semana" },
-      { id: "dosveces", title: "2 vez por semana" },
-      { id: "soloimportante", title: "Solo info importante" },
+      { id: "unavez", title: "Una veces x semana" },
+      { id: "dosveces", title: "Dos veces x semana" },
+      { id: "soloimportante", title: "Solo lo importante" },
     ],
   },
   3: {
     texto: "¿Qué tipo de información le gustaría recibir a través de WhatsApp?",
     opciones: [
-      { id: "promos", title: "Promociones y descuentos" },
-      { id: "novedades", title: "Novedades de productos" },
-      { id: "pqrs", title: "Soporte Pedidos/PQRS" },
+      { id: "promos", title: "Promos y descuentos" },
+      { id: "novedades", title: "Novedades" },
+      { id: "pqrs", title: "Pedidos/PQRS" },
     ],
   },
   4: {
