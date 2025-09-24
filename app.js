@@ -252,8 +252,8 @@ app.post("/", async (req, res) => {
   try {
     const mensaje = body.entry[0].changes[0].value.messages[0];
     const numero = mensaje.from;
-    const respuesta = ""
-    const texto = ""
+    let respuesta = ""
+    let texto = ""
 
     console.log("🔎 Tipo de mensaje recibido:", mensaje.type, JSON.stringify(mensaje, null, 2));
 
