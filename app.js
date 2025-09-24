@@ -226,6 +226,32 @@ async function enviarPregunta(numero, numPregunta) {
   }
 }
 
+// Enviar mensaje de texto simple
+async function enviarMensajeTexto(numero, texto) {
+  const payload = {
+    messaging_product: "whatsapp",
+    to: numero,
+    text: { body: texto },
+  };
+
+  try {
+    await axios.post(
+      `https://graph.facebook.com/v20.0/${phoneNumberId}/messages`,
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    console.log(`✅ Mensaje de texto enviado a ${numero}`);
+  } catch (err) {
+    console.error("❌ Error enviando mensaje de texto:", err.response?.data || err);
+  }
+}
+
+
 // ========================
 // RUTAS DEL WEBHOOK
 // ========================
@@ -298,6 +324,12 @@ app.post("/", async (req, res) => {
           [encuestaId]
         );
         console.log(`✅ Encuesta finalizada para ${numero}`);
+
+        // 👉 Aquí enviamos el agradecimiento
+        await enviarMensajeTexto(
+          numero,
+          "🎉 ¡Gracias por completar la encuesta! 🙏 Tus respuestas nos ayudan a mejorar nuestro servicio."
+        );
       }
     }
   } catch (err) {
