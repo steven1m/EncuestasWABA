@@ -25,7 +25,7 @@ const PREGUNTAS = {
    texto: "¿Con qué frecuencia le gustaría recibir mensajes?",
    opciones: [
      { id: "1_semana",     title: "1 vez/semana" },
-     { id: "2_semana",     title: "2 veces/semana" },
+     { id: "2_semana",     title: "2 veces/mes" },
      { id: "solo_necesario", title: "Solo necesario" },
    ],
  },
