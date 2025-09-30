@@ -21,53 +21,50 @@ const pool = new Pool({
 
 // Definir las preguntas (solo desde la 2 porque la 1 va en plantilla)
 const PREGUNTAS = {
-  2: {
-    texto: "¿Con qué frecuencia le gustaría recibir mensajes de nuestra empresa por WhatsApp?",
-    opciones: [
-      { id: "unavez", title: "Una veces x semana" },
-      { id: "dosveces", title: "Dos veces x semana" },
-      { id: "soloimportante", title: "Solo lo importante" },
-    ],
-  },
-  3: {
-    texto: "¿Qué tipo de información le gustaría recibir a través de WhatsApp?",
-    opciones: [
-      { id: "promos", title: "Promos y descuentos" },
-      { id: "novedades", title: "Novedades" },
-      { id: "pqrs", title: "Pedidos/PQRS" },
-    ],
-  },
-  4: {
-    texto: "Satisfacción con el Vendedor Asignado: ¿Qué tan satisfecho está con la atención recibida por el vendedor asignado?",
-    opciones: [
-      //{ id: "Muysatisfecho", title: "Muy satisfecho" },
-      { id: "Satisfecho", title: "Satisfecho" },
-      { id: "Neutral", title: "Neutral" },
-      { id: "Insatisfecho", title: "Insatisfecho" },
-    ],
-  },
-  5: {
-    texto: "¿Cómo calificaría la disponibilidad y tiempo de respuesta del vendedor asignado?",
-    opciones: [
-      //{ id: "Excelente", title: "Excelente" },
-      { id: "Bueno", title: "Bueno" },
-      { id: "Regular", title: "Regular" },
-      { id: "Malo", title: "Malo" },
-    ],
-  },
-  6: {
-    texto: "¿Qué tan claro le ha resultado el vendedor al explicar los productos o servicios?",
-    opciones: [
-      //{ id: "Muyclaro", title: "Muy claro" },
-      { id: "Claro", title: "Claro" },
-      { id: "Pococlaro", title: "Promedio" },
-      { id: "Nadaclaro", title: "Nada claro" },
-    ],
-  },
-  7: {
-    texto: "¿Tiene algún comentario adicional sobre el uso de WhatsApp o la atención del vendedor asignado? (Respuesta abierta)",
-    //opciones: [{ id: "fin", title: "Cerrar" }],
-  },
+ 2: {
+   texto: "¿Con qué frecuencia le gustaría recibir mensajes?",
+   opciones: [
+     { id: "1_semana",     title: "1 vez/semana" },
+     { id: "2_semana",     title: "2 veces/semana" },
+     { id: "solo_necesario", title: "Solo necesario" },
+   ],
+ },
+ 3: {
+   texto: "¿Qué tipo de información prefiere recibir?",
+   opciones: [
+     { id: "pedidos",   title: "Pedidos" },
+     { id: "novedades", title: "Novedades" },
+     { id: "promos",    title: "Promos" },
+   ],
+ },
+ 4: {
+   texto: "Si implementamos WhatsApp como canal oficial, ¿lo usaría?",
+   opciones: [
+     { id: "si_siempre", title: "Sí, siempre" },
+     { id: "a_veces",    title: "A veces" },
+     { id: "no_usaria",  title: "No usaría" },
+   ],
+ },
+ 5: {
+   texto: "¿Qué canal usa más hoy con proveedores?",
+   opciones: [
+     { id: "whatsapp", title: "WhatsApp" },
+     { id: "correo",   title: "Correo" },
+     { id: "telefono", title: "Teléfono" },
+   ],
+ },
+ 6: {
+   texto: "¿Qué beneficio valora más al usar WhatsApp?",
+   opciones: [
+     { id: "rapidez",     title: "Rapidez" },
+     { id: "comodidad",   title: "Comodidad" },
+     { id: "seguimiento", title: "Seguimiento" },
+   ],
+ },
+ 7: {
+   texto: "¿Tiene algún comentario o sugerencia? (respuesta abierta)",
+   // sin opciones: campo de texto libre
+ },
 };
 
 // ========================
