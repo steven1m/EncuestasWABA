@@ -49,6 +49,7 @@ const clientes = [
   { telefono: "573108262005", nombre: "PAOLA FERROALUMINIOS" },
   { telefono: "573134691706", nombre: "PAOLA COMPRAS" },
   { telefono: "573118983184", nombre: "ROSA SANTOS ALUMINIOS ARQUITECTURA" },
+  { telefono: "573136999005", nombre: "Steven Murillo" },
 ];
 
 // Definir las preguntas (solo desde la 2 porque la 1 va en plantilla)
@@ -191,6 +192,9 @@ async function enviarEnBatch(clientes, delayMs = 1000) {
     await new Promise(resolve => setTimeout(resolve, delayMs)); // espera entre envíos
   }
 }
+
+//Envio de Encuentas
+enviarEnBatch(clientes, 1000);
 
 // Enviar preguntas 2 a 7 como botones interactivos
 async function enviarPregunta(numero, numPregunta) {
