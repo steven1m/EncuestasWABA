@@ -19,6 +19,38 @@ const pool = new Pool({
   ssl: { rejectUnauthorized: false } // Render requiere SSL
 });
 
+const clientes = [
+  //dey
+  { telefono: "573103620959", nombre: "JOSE GREGORIO LOPEZ" },
+  { telefono: "573015888261", nombre: "OLGLASS INTERNACIONAL" },
+  { telefono: "573173775085", nombre: "EL AMPARO" },
+  { telefono: "573142798413", nombre: "ALUVITEMP" },
+  { telefono: "573174422239", nombre: "ARQUIVIDRIOS" },
+  { telefono: "573183852494", nombre: "GLASS METAL" },
+  //galviz
+  { telefono: "573185480082", nombre: "Jorge Andres Ortiz" },
+  { telefono: "573006599558", nombre: "Alejandro Ortiz" },
+  { telefono: "573168228567", nombre: "Carolina Mejia" },
+  { telefono: "573155714858", nombre: "Mauricio Gomez" },
+  { telefono: "573164776760", nombre: "Karen benavides" },
+  { telefono: "573173559699", nombre: "Jaean Florez" },
+  { telefono: "573206729910", nombre: "Jazmin Lucumi" },
+  //
+  { telefono: "573167700403", nombre: "ALUMINIOS OTTO" },
+  { telefono: "573105712286", nombre: "BRUNO DUITAMA" },
+  { telefono: "573112224644", nombre: "CLAUDIA FENASTRA" },
+  { telefono: "573134165160", nombre: "DEIRY INTERNACIONAL ALUMINIOS" },
+  { telefono: "573153831390", nombre: "DIEGO COALUM" },
+  { telefono: "573106194065", nombre: "DIEGO FERNANDO CODELAMINA" },
+  { telefono: "573112641898", nombre: "IVAN COLWINDOWS" },
+  { telefono: "573123799054", nombre: "LEYDI IMPERIO DEL ALUMINIO" },
+  { telefono: "573105698700", nombre: "MONICA BACATA" },
+  { telefono: "573112029571", nombre: "PAOLA FERROALUMINIOS" },
+  { telefono: "573108262005", nombre: "PAOLA FERROALUMINIOS" },
+  { telefono: "573134691706", nombre: "PAOLA COMPRAS" },
+  { telefono: "573118983184", nombre: "ROSA SANTOS ALUMINIOS ARQUITECTURA" },
+];
+
 // Definir las preguntas (solo desde la 2 porque la 1 va en plantilla)
 const PREGUNTAS = {
  2: {
@@ -149,6 +181,14 @@ async function enviarPrimeraPregunta(numero) {
     console.log(`✅ Primera pregunta enviada con plantilla a ${numero}`);
   } catch (err) {
     console.error("❌ Error enviando plantilla:", err.response?.data || err);
+  }
+}
+
+//Enviar Encuestas en Batch con delay (1 por segundo)
+async function enviarEnBatch(clientes, delayMs = 1000) {
+  for (const cliente of clientes) {
+    await enviarPrimeraPregunta(cliente.telefono);
+    await new Promise(resolve => setTimeout(resolve, delayMs)); // espera entre envíos
   }
 }
 
