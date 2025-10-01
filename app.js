@@ -162,8 +162,8 @@ async function enviarPrimeraPregunta(numero) {
     to: numero,
     type: "template",
     template: {
-      name: "feedback_survey2", // plantilla aprobada
-      language: { code: "es_ES" }
+      name: "feedback_survey_2", // plantilla aprobada
+      language: { code: "es_CO" }
     }
   };
 
