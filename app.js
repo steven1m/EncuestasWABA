@@ -194,7 +194,7 @@ async function enviarEnBatch(clientes, delayMs = 1000) {
 }
 
 //Envio de Encuentas
-enviarEnBatch(clientes, 1000);
+//enviarEnBatch(clientes, 1000);
 
 // Enviar preguntas 2 a 7 como botones interactivos
 async function enviarPregunta(numero, numPregunta) {
